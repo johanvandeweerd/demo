@@ -1,0 +1,5 @@
+apply plugin: "com.example.demo.buildscript.lib"
+
+dependencies {
+    implementation "org.apache.commons:commons-lang3"
+}

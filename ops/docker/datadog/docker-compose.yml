@@ -1,0 +1,24 @@
+version: '3'
+services:
+  datadog:
+    image: datadog/agent:latest-jmx
+    environment:
+      - DD_API_KEY=<YOUR_DD_API_KEY> # Datadog API key
+      - DD_APM_ENABLED=true # Enable APM in Datadog
+      - DD_DOGSTATSD_NON_LOCAL_TRAFFIC=true # Listen to DogStatsD packets from other containers
+      - DD_LOG_LEVEL=INFO # Datadog agent log level
+      - DD_LOGS_CONFIG_CONTAINER_COLLECT_ALL=true # Collect logs for all containers
+      - DD_LOGS_ENABLED=true # Enable logs in Datadog
+      - SD_JMX_ENABLE=true # Enable JMX Service Discovery
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /proc/:/host/proc/:ro
+      - /sys/fs/cgroup/:/host/sys/fs/cgroup:ro
+      - ./conf.d/:/conf.d:ro
+    ports:
+      - "8125:8125"
+      - "8126:8126"
+networks:
+  default:
+    external:
+      name: demo

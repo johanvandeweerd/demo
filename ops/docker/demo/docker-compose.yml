@@ -1,0 +1,28 @@
+version: '3'
+services:
+  demo-web:
+    image: demo/demo-web:1.0.0
+    environment:
+      - DD_AGENT_HOST=datadog # Hostname where Datadog agent is running
+      - DD_JMXFETCH_ENABLED=true # Enable fetching of metrics through JMX
+      - DD_JMXFETCH_STATSD_HOST=datadog # Hostname where Datadog agent is running
+      - DD_LOGS_INJECTION=true # Inject trace and span id's in logs
+      - DD_SERVICE_NAME=demo-web # Service name of this app in Datadog
+      - DD_TRACE_GLOBAL_TAGS=env:demo # Add env tag with value demo to group APM stats
+      - JAVA_OPTS=-javaagent:/opt/datadog/dd-java-agent.jar -Ddatadog.slf4j.simpleLogger.defaultLogLevel=info # Enable the enable the datadog java agent and set datadog agent log level to info
+    ports:
+      - "8080:8080"
+  demo-worker:
+    image: demo/demo-worker:1.0.0
+    environment:
+      - DD_AGENT_HOST=datadog # Hostname where Datadog agent is running
+      - DD_JMXFETCH_ENABLED=true # Enable fetching of metrics through JMX
+      - DD_JMXFETCH_STATSD_HOST=datadog # Hostname where Datadog agent is running
+      - DD_LOGS_INJECTION=true # Inject trace and span id's in logs
+      - DD_SERVICE_NAME=demo-worker # Service name of this app in Datadog
+      - DD_TRACE_GLOBAL_TAGS=env:demo # Add env tag with value demo to group APM stats
+      - JAVA_OPTS=-javaagent:/opt/datadog/dd-java-agent.jar -Ddatadog.slf4j.simpleLogger.defaultLogLevel=info # Enable the enable the datadog java agent and set datadog agent log level to info
+networks:
+  default:
+    external:
+      name: demo

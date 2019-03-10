@@ -1,0 +1,14 @@
+apply plugin: "com.example.demo.buildscript.app"
+
+mainClassName = "com.example.demo.worker.DemoWorkerApplication"
+
+dependencies {
+    implementation project(":common:common-core")
+    implementation project(":common:common-logging")
+    implementation project(":demo-api")
+
+    implementation "org.springframework.boot:spring-boot-starter-web"
+    implementation "org.springframework.kafka:spring-kafka"
+
+    implementation "org.apache.commons:commons-lang3"
+}

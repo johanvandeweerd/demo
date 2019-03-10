@@ -1,0 +1,16 @@
+version: '3'
+services:
+  zookeeper:
+    build: ./
+    command: ['/opt/kafka/bin/zookeeper-server-start.sh', '/opt/kafka/config/zookeeper.properties']
+  kafka:
+    build: ./
+    command: ['/opt/kafka/bin/kafka-server-start.sh', '/opt/kafka/config/server.properties', '--override', 'zookeeper.connect=zookeeper:2181/kafka', '--override', 'advertised.listeners=PLAINTEXT://kafka:9092']
+    environment:
+      - JMX_PORT=9999
+    ports:
+      - "9092:9092"
+networks:
+  default:
+    external:
+      name: demo

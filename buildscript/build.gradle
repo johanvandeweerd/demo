@@ -1,0 +1,14 @@
+apply plugin: 'groovy'
+
+group = "com.example.demo"
+
+repositories {
+    gradlePluginPortal()
+}
+
+dependencies {
+    implementation gradleApi()
+    implementation localGroovy()
+
+    implementation "com.palantir.gradle.docker:gradle-docker:0.21.0"
+}

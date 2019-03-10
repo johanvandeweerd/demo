@@ -1,0 +1,10 @@
+rootProject.name = "demo"
+
+includeBuild "buildscript"
+
+include "common:common-core",
+        "common:common-json",
+        "common:common-logging",
+        "demo-api",
+        "demo-web",
+        "demo-worker"

@@ -1,0 +1,6 @@
+apply plugin: "com.example.demo.buildscript.lib"
+
+dependencies {
+    implementation "org.springframework:spring-context"
+    implementation "com.fasterxml.jackson.core:jackson-databind"
+}

@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: demo-web
+  kafka:
+    bootstrap-servers: kafka:9092
+
+logging:
+  level:
+    root: INFO
+    org.apache.kafka: WARN

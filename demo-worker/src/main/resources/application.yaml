@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: demo-worker
+  kafka:
+    bootstrap-servers: kafka:9092
+    consumer:
+      group-id: hello-world-group
+      auto-offset-reset: earliest
+
+logging:
+  level:
+    root: INFO
+    org.apache.kafka: WARN

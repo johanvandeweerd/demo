@@ -1,0 +1,6 @@
+instances:
+ - kafka_connect_str: kafka:9092
+   zk_connect_str: zookeeper:2181
+   consumer_groups:
+    hello-world-group:
+      hello-world: [0]

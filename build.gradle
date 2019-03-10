@@ -1,0 +1,36 @@
+buildscript {
+    dependencies {
+        classpath "com.example.demo:buildscript:0"
+    }
+}
+
+plugins {
+    id "io.spring.dependency-management" version "1.0.7.RELEASE"
+}
+
+allprojects {
+    group = "com.example.demo"
+    version = "1.0.0"
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+}
+
+subprojects {
+    apply plugin: "io.spring.dependency-management"
+
+    dependencyManagement {
+        imports {
+            mavenBom "org.springframework.boot:spring-boot-starter-parent:2.1.1.RELEASE"
+        }
+
+        dependencies {
+            dependency "ch.qos.logback.contrib:logback-json-classic:0.1.5"
+            dependency "ch.qos.logback.contrib:logback-jackson:0.1.5"
+
+            dependency "org.apache.commons:commons-lang3:3.8.1"
+        }
+    }
+}
