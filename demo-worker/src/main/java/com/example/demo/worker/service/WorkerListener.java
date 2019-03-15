@@ -1,6 +1,7 @@
 package com.example.demo.worker.service;
 
 import com.example.demo.api.HelloWorldMessage;
+import datadog.trace.api.Trace;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,6 +13,7 @@ public class WorkerListener {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(WorkerListener.class);
 
+    @Trace
     @KafkaListener(topics = "hello-world")
     public void listen(ConsumerRecord<String, HelloWorldMessage> consumerRecord) {
         LOGGER.info("Received message with headers {} and payload {}", consumerRecord.headers(), consumerRecord.value());

@@ -27,6 +27,8 @@ subprojects {
         }
 
         dependencies {
+            dependency 'com.datadoghq:dd-trace-api:0.24.1'
+
             dependency "ch.qos.logback.contrib:logback-json-classic:0.1.5"
             dependency "ch.qos.logback.contrib:logback-jackson:0.1.5"
 
