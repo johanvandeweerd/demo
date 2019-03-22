@@ -5,6 +5,7 @@ mainClassName = "com.example.demo.worker.DemoWorkerApplication"
 dependencies {
     implementation project(":common:common-core")
     implementation project(":common:common-logging")
+    implementation project(":common:common-tracing")
     implementation project(":demo-api")
 
     implementation "org.springframework.boot:spring-boot-starter-web"

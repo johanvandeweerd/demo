@@ -5,6 +5,7 @@ includeBuild "buildscript"
 include "common:common-core",
         "common:common-json",
         "common:common-logging",
+        "common:common-tracing",
         "demo-api",
         "demo-web",
         "demo-worker"
