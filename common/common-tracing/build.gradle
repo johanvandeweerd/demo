@@ -1,0 +1,11 @@
+apply plugin: "com.example.demo.buildscript.lib"
+
+dependencies {
+    implementation "org.springframework:spring-context"
+    implementation "org.springframework.kafka:spring-kafka"
+    
+    api "io.opentracing:opentracing-api"
+    api "io.opentracing:opentracing-util"
+    
+    implementation "io.jaegertracing:jaeger-client"
+}

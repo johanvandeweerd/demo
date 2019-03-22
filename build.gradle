@@ -27,6 +27,10 @@ subprojects {
         }
 
         dependencies {
+            dependency "io.opentracing:opentracing-api:0.31.0"
+            dependency "io.opentracing:opentracing-util:0.31.0"
+            dependency "io.jaegertracing:jaeger-client:0.32.0"
+
             dependency "ch.qos.logback.contrib:logback-json-classic:0.1.5"
             dependency "ch.qos.logback.contrib:logback-jackson:0.1.5"
 
