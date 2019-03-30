@@ -1,3 +1,0 @@
-instances:
-  - host: zookeeper
-    port: 2181

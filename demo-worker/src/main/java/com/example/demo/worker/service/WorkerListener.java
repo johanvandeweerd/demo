@@ -15,16 +15,5 @@ public class WorkerListener {
     @KafkaListener(topics = "hello-world")
     public void listen(ConsumerRecord<String, HelloWorldMessage> consumerRecord) {
         LOGGER.info("Received message with headers {} and payload {}", consumerRecord.headers(), consumerRecord.value());
-        sleep();
-        LOGGER.info("Processed message with {} and payload {}", consumerRecord.headers(), consumerRecord.value());
-    }
-
-    private void sleep() {
-        try {
-            double interval = Math.random() * 100;
-            Thread.sleep((long) interval);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
     }
 }
