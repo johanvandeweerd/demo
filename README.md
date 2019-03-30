@@ -60,7 +60,7 @@ docker run -it --rm \
 When running the demo application from an IDE, make sure to 
 * Add the following to your `/etc/hosts` file
 ```bash
-127.0.0.1   kafka datadog
+127.0.0.1   kafka datadog tracing
 ```
 * Download the [Datadog java agent](https://search.maven.org/classic/remote_content?g=com.datadoghq&a=dd-java-agent&v=LATEST) to the root of the project as `dd-java-agent.jar`
 * Start the `demo-web` app with the following  

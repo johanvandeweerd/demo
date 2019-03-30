@@ -1,0 +1,7 @@
+apply plugin: "com.example.demo.buildscript.lib"
+
+dependencies {
+    implementation "org.springframework:spring-context"
+    implementation "org.springframework.cloud:spring-cloud-starter-zipkin"
+    api "org.springframework.cloud:spring-cloud-sleuth-core"
+}

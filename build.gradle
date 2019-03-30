@@ -25,6 +25,9 @@ subprojects {
         imports {
             mavenBom "org.springframework.boot:spring-boot-starter-parent:2.1.1.RELEASE"
         }
+        imports {
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:Greenwich.SR1"
+        }
 
         dependencies {
             dependency "ch.qos.logback.contrib:logback-json-classic:0.1.5"

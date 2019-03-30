@@ -1,0 +1,6 @@
+spring:
+  zipkin:
+    baseUrl: http://tracing:9411/
+  sleuth:
+    sampler:
+      probability: 1
