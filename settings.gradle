@@ -7,4 +7,6 @@ include "common:common-core",
         "common:common-logging",
         "demo-api",
         "demo-web",
-        "demo-worker"
+        "demo-worker1",
+        "demo-worker2",
+        "demo-worker3"

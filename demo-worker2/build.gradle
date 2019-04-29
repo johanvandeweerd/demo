@@ -1,9 +1,10 @@
 apply plugin: "com.example.demo.buildscript.app"
 
-mainClassName = "com.example.demo.worker.DemoWorkerApplication"
+mainClassName = "com.example.demo.worker2.DemoWorker2Application"
 
 dependencies {
     implementation project(":common:common-core")
+    implementation project(":common:common-json")
     implementation project(":common:common-logging")
     implementation project(":demo-api")
 

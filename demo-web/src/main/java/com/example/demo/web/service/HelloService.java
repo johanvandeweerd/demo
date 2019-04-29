@@ -6,6 +6,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
+import static com.example.demo.common.core.Constants.TOPIC_HELLO_WORLD;
 import static com.example.demo.common.json.ObjectMapperFactory.json;
 
 
@@ -13,7 +14,6 @@ import static com.example.demo.common.json.ObjectMapperFactory.json;
 public class HelloService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(HelloService.class);
-    private static final String TOPIC = "hello-world";
 
     private final KafkaTemplate<String, String> template;
 
@@ -24,6 +24,6 @@ public class HelloService {
     public void sayHello(String name) {
         HelloWorldMessage message = new HelloWorldMessage(name);
         LOGGER.info("Sending message to worker {}", message);
-        template.send(TOPIC, json(message));
+        template.send(TOPIC_HELLO_WORLD, json(message));
     }
 }

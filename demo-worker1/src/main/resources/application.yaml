@@ -1,11 +1,14 @@
 spring:
   application:
-    name: demo-worker
+    name: demo-worker1
   kafka:
     bootstrap-servers: kafka:9092
     consumer:
-      group-id: hello-world-group
+      group-id: demo-worker1-group
       auto-offset-reset: earliest
+
+server:
+  port: 8001
 
 logging:
   level:
